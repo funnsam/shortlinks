@@ -13,7 +13,8 @@ with open("links.csv", "r") as f:
     for l in f.readlines():
         [name, link] = l.rstrip().split(",", 1)
 
-        with open(f"pages/{name}.html", "w") as p:
+        os.mkdir(f"pages/{name}")
+        with open(f"pages/{name}/index.html", "w") as p:
             p.write(f"\
 <!DOCTYPE HTML><html>\
 <head>\
